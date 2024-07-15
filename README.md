@@ -1,0 +1,2 @@
+# practicmode
+Typing Practic Mode
