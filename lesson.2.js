@@ -740,7 +740,7 @@ const footer = document.createElement('footer');
 const p = document.createElement('p');
 
 // Set the text content of the paragraph
-p.textContent = 'Developed by-Balakram Tudu © 2024 typing-practic. All rights reserved.';
+p.textContent = 'Developed by-Balakram Tudu © 2024 practicemode. All rights reserved.';
 
 // Append the paragraph to the footer
 footer.appendChild(p);
