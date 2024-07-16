@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
+
 <head>
   <meta charset="utf-8" />
   <meta http-equiv="content-language" content="en" />
@@ -15,6 +16,7 @@
     body {
       transition: background-image 0.5s ease;
     }
+
     #changeBgBtn {
       margin-top: 20px;
       padding: 10px 20px;
@@ -23,11 +25,15 @@
       border: none;
       cursor: pointer;
     }
+
     #changeBgBtn:hover {
       background-color: #45a049;
     }
+
+    /*==================================*/
   </style>
 </head>
+
 <body>
   <div id="wrap">
     <div id="top" class="shadow_menu">
@@ -52,6 +58,7 @@
         <li class="menu_new"><a href="lesson/13.html" title="New keys: z, ?, :, &lt;, &gt; and /">Lesson 13</a></li>
         <li class="menu_new"><a href="lesson/14.html" title="New keys: Numbers">Lesson 14</a></li>
         <li class="menu_new"><a href="lesson/15.html" title="New keys: All keys">Lesson 15</a></li>
+        <li class="menu_other"><a href="numeric_keypad.html">Numeric keypad</a></li>
 
         <div id="buttonContainer">
           <a href="https://balakram.github.io/typing/"><button id="typingTestBtn" class="popup-btn">Typing test</button></a>
@@ -67,47 +74,289 @@
       <p class="welcome-note">
         Start improving your typing speed and accuracy today with our free lessons and typing test.
       </p>
-      <p class="welcome-note">
-        𝓗𝓲𝓲 !<br>
-        𝓢𝓪𝓽𝔂𝓪𝓷𝓪𝓻𝓪𝔂𝓪𝓷 𝓝𝓪𝓲𝓴<br>
-          𝓦𝓮𝓵𝓬𝓸𝓶𝓮 𝓽𝓸 𝓽𝓱𝓮 𝓼𝓲𝓽𝓮.
-      </p>
+      <br>
       <div id="first">
-        <div id="intro" class="slideshow-container">
-          <div class="slideshow-content">Are you still typing with two fingers? Do you still need to look at your keyboard before every keystroke?</div>
-          <div class="slideshow-content">Typing Practice Mode is a free, user-friendly learning website that is designed to help you learn, practice and improve your typing speed and accuracy.</div>
-          <div class="slideshow-content">Once you can touch type you will not need to look at the keyboard to find the letters you want to type and you will also be able to type at a much faster speed!</div>
-          <div class="slideshow-content">Touch typing is a method based on muscle memory instead of sight. This method allows you to achieve much higher speed of data entry, especially if you need to transcribe text from other visual material.</div>
-          <div class="slideshow-content">Typing with the touch typing method significantly improves your computer productivity; it increases data entry speed and, where possible, reduces fatigue and injury to the eyes.</div>
-          <div class="slideshow-content">Typing Practice Mode contains 15 lessons, a speed test and games from which you can learn to type step-by-step, monitor your own progress and have fun!</div>
+        <!--<div id="intro" class="slideshow-container welcome-note1">
+          <div class="slideshow-content">Still typing with two fingers? Do you need to look at your keyboard before every keystroke? It's time to change that!</div>
+          <div class="slideshow-content">Typing Practice Mode is a free, user-friendly website designed to help you learn, practice, and improve your typing speed and accuracy.</div>
+          <div class="slideshow-content">With touch typing, you won't need to look at the keyboard. You'll type faster and more efficiently!</div>
+          <div class="slideshow-content">Touch typing uses muscle memory instead of sight, letting you achieve higher data entry speeds, especially when transcribing text.</div>
+          <div class="slideshow-content">Boost your productivity with touch typing. Increase your speed and reduce eye strain and fatigue.</div>
+          <div class="slideshow-content">Typing Practice Mode offers 15 lessons and games to help you learn step-by-step, track your progress, and have fun!</div>
         </div>
+                  
+        <script>
+          var slideIndex = 0;
+          showSlides();
+
+          function showSlides() {
+            var slides = document.getElementsByClassName("slideshow-content");
+
+            for (var i = 0; i < slides.length; i++) {
+              slides[i].style.display = "none"; 
+            }
+            slideIndex++;
+            if (slideIndex > slides.length) { slideIndex = 1; } 
+
+            slides[slideIndex - 1].style.display = "inline-block"; 
+
+            setTimeout(showSlides, 8000); // Change image every 2 seconds
+          }
+        </script>-->
+
+          <!--<div id="intro" class="slideshow-container welcome-note1">
+            <div class="slideshow-content">Still typing with two fingers? Do you need to look at your keyboard before every keystroke? It's time to change that!<span class="typing-effect"></span></div>
+            <div class="slideshow-content">Typing Practice Mode is a free, user-friendly website designed to help you learn, practice, and improve your typing speed and accuracy.<span class="typing-effect"></span></div>
+            <div class="slideshow-content">With touch typing, you won't need to look at the keyboard. You'll type faster and more efficiently!<span class="typing-effect"></span></div>
+            <div class="slideshow-content">Touch typing uses muscle memory instead of sight, letting you achieve higher data entry speeds, especially when transcribing text.<span class="typing-effect"></span></div>
+            <div class="slideshow-content">Boost your productivity with touch typing. Increase your speed and reduce eye strain and fatigue.<span class="typing-effect"></span></div>
+            <div class="slideshow-content">Typing Practice Mode offers 15 lessons and games to help you learn step-by-step, track your progress, and have fun!<span class="typing-effect"></span></div>
+          </div>
+
+
+
+        <script>
+          var slideIndex = 0;
+          var typingSpeed = 100; // milliseconds
+
+          showSlides();
+
+          function showSlides() {
+            var slides = document.getElementsByClassName("slideshow-content");
+
+            for (var i = 0; i < slides.length; i++) {
+              slides[i].style.display = "none";
+            }
+            slideIndex++;
+            if (slideIndex > slides.length) { slideIndex = 1; }
+
+            var currentSlide = slides[slideIndex - 1];
+            currentSlide.style.display = "inline-block";
+
+            var text = currentSlide.innerText;
+            var typingEffectElement = currentSlide.querySelector(".typing-effect");
+            typingEffectElement.textContent = "";
+            typeText(typingEffectElement, text, showSlides);
+          }
+
+          function typeText(element, text, callback) {
+            var i = 0;
+            function type() {
+              if (i < text.length) {
+                element.textContent += text.charAt(i);
+                i++;
+                setTimeout(type, typingSpeed);
+              } else {
+                setTimeout(callback, 2000); // Wait 2 seconds before moving to the next slide
+              }
+            }
+            type();
+          }
+        </script>-->
         <div id="start">
           <a href="lesson/1.html" class="start_btn shadow_btn">Start Typing</a>
           <div class="clr"></div>
         </div>
       </div>
-      <div class="middle_stuff">
-        <!-- TypingStudy bottom -->
-        <ins class="adsbygoogle" style="display:inline-block;width:728px;height:90px" data-ad-client="ca-pub-2467254070946095" data-ad-slot="6470224697"></ins>
-        <script>
-          (adsbygoogle = window.adsbygoogle || []).push({});
-        </script>
-      </div>
-    </div>
+      <!--==============================================================================================-->
 
-    <div id="right">
-      <div id='info'>
-        <div class="right_stuff">
-          <!-- TypingStudy right -->
-          <ins class="adsbygoogle" style="display:inline-block;width:160px;height:600px" data-ad-client="ca-pub-2467254070946095" data-ad-slot="9915171604"></ins>
-          <script>
-            (adsbygoogle = window.adsbygoogle || []).push({});
-          </script>
+      <script type="text/javascript">
+        var gAjaxUrl = '/' + 'ajax/result.php';
+        var gTimeUrl = '/' + 'ajax/time.php';
+      </script>
+      <script type="text/javascript" src="../lesson.2.js"></script>
+      <script type="text/javascript">
+        document.addEventListener("DOMContentLoaded", function () {
+          try {
+            Init(3);
+          }
+          catch (er) {
+            document.getElementById("js_error").innerHTML = "";
+          }
+        });
+      </script>
+
+      <div id="text" class=" ">
+      </div>
+      <div>
+        <div>
+          <form name="type_form" action="#" autocomplete="off">
+            <textarea name="type" id="type" class="dir_ltr slideshow-container welcome-note2" autocomplete="off"
+              autocorrect="off" autocapitalize="none" spellcheck="false" cols="20" rows="20"
+              onkeydown="return OnKeyDown(this, event);" onkeypress="return OnKeyPress(this, event);"></textarea>
+            <input type="hidden" id="type_text"value="> Still typing with two fingers?¶Do you need to look at your keyboard before every keystroke? It's time to change that!¶Typing Practice Mode is a free, user-friendly website designed to help you learn, practice, and improve your typing speed and accuracy.¶With touch typing, you won't need to look at the keyboard.¶You will type faster and more efficiently!¶Touch typing uses muscle memory instead of sight, letting you achieve higher data entry speeds, especially when transcribing text.¶Boost your productivity with touch typing.Increase your speed and reduce eye strain and fatigue.¶Typing Practice Mode offers 15 lessons help you learn step-by-step, track your progress, and have fun!¶" />
+            <input type="hidden" id="type_keys"
+              value="96:101¶126:101;413¶49:102¶33:102;413¶50:103¶64:103;413¶51:104¶35:104;413¶52:105¶36:105;413¶53:106¶37:106;413¶54:107¶94:107;96:101¶126:101;413¶49:102¶33:102;413¶50:103¶64:103;413¶51:104¶35:104;413¶52:105¶36:105;413¶53:106¶37:106;413¶54:107¶94:107401¶55:108¶38:108;401¶56:109¶42:109;401¶57:110¶40:110;401¶48:113;413¶101:206;413¶121:207¶89:207;401¶117:208¶85:208;401¶105:209¶73:209;401¶111:210¶79:210;401¶112:211¶80:211;401¶91:212¶123:212;401¶93:213¶125:213;401¶92:214¶124:214;401¶97:302¶65:302;413¶115:303¶83:303;413¶100:304¶68:304;413¶102:305¶70:305;413¶103:306¶71:306;413¶104:307¶72:307;401¶106:308¶74:308;401¶107:309¶75:309;401¶108:310¶76:310;401¶59:311¶58:311;401¶39:312¶34:312;401¶122:403¶90:403;413¶120:404¶88:404;413¶99:405¶67:405;413¶118:406¶86:406;413¶98:407¶66:407;413¶110:408¶78:408;401¶109:409¶77:409;401¶44:410¶60:410;401¶46:411¶62:411;401¶47:412¶63:412;401¶32:504¶" />
+            <input type="hidden" name="utf8" value="&#x2713;" />
+          </form>
+        </div>
+
+      </div> <!-- typing -->
+      <div id="suggestion" class="suggestion1">
+        <div class="kb">
+          <div id="key_101" class="key key_two key_tilde">
+            <div class="key_top">~</div>
+            <div class="key_bottom">`</div>
+          </div>
+          <div id="key_102" class="key key_two key_1">
+            <div class="key_top">!</div>
+            <div class="key_bottom">1</div>
+          </div>
+          <div id="key_103" class="key key_two key_2">
+            <div class="key_top">@</div>
+            <div class="key_bottom">2</div>
+          </div>
+          <div id="key_104" class="key key_two key_3">
+            <div class="key_top">#</div>
+            <div class="key_bottom">3</div>
+          </div>
+          <div id="key_105" class="key key_two key_4">
+            <div class="key_top">$</div>
+            <div class="key_bottom">4</div>
+          </div>
+          <div id="key_106" class="key key_two key_5">
+            <div class="key_top">%</div>
+            <div class="key_bottom">5</div>
+          </div>
+          <div id="key_107" class="key key_two key_6">
+            <div class="key_top">^</div>
+            <div class="key_bottom">6</div>
+          </div>
+          <div id="key_108" class="key key_two key_7">
+            <div class="key_top">&amp;</div>
+            <div class="key_bottom">7</div>
+          </div>
+          <div id="key_109" class="key key_two key_8">
+            <div class="key_top">*</div>
+            <div class="key_bottom">8</div>
+          </div>
+          <div id="key_110" class="key key_two key_9">
+            <div class="key_top">(</div>
+            <div class="key_bottom">9</div>
+          </div>
+          <div id="key_111" class="key key_two key_0">
+            <div class="key_top">)</div>
+            <div class="key_bottom">0</div>
+          </div>
+          <div id="key_112" class="key key_two key_-">
+            <div class="key_top">_</div>
+            <div class="key_bottom">-</div>
+          </div>
+          <div id="key_113" class="key key_two key_=">
+            <div class="key_top">+</div>
+            <div class="key_bottom">=</div>
+          </div>
+          <div id="key_114" class="key key_back">Back</div>
+          <div id="key_201" class="key key_tab">Tab</div>
+          <div id="key_202" class="key key_q">q</div>
+          <div id="key_203" class="key key_w">w</div>
+          <div id="key_204" class="key key_e">e</div>
+          <div id="key_205" class="key key_r">r</div>
+          <div id="key_206" class="key key_t">t</div>
+          <div id="key_207" class="key key_y">y</div>
+          <div id="key_208" class="key key_u">u</div>
+          <div id="key_209" class="key key_i">i</div>
+          <div id="key_210" class="key key_o">o</div>
+          <div id="key_211" class="key key_p">p</div>
+          <div id="key_212" class="key key_two key_bracket_lft">
+            <div class="key_top">{</div>
+            <div class="key_bottom">[</div>
+          </div>
+          <div id="key_213" class="key key_two key_bracket_rgt">
+            <div class="key_top">}</div>
+            <div class="key_bottom">]</div>
+          </div>
+          <div id="key_214" class="key key_two key_backslash_rgt">
+            <div class="key_top">|</div>
+            <div class="key_bottom">\</div>
+          </div>
+          <div id="key_301" class="key key_caps">Caps</div>
+          <div id="key_302" class="key key_a">a</div>
+          <div id="key_303" class="key key_s">s</div>
+          <div id="key_304" class="key key_d">d</div>
+          <div id="key_305" class="key key_f">f</div>
+          <div id="key_306" class="key key_g">g</div>
+          <div id="key_307" class="key key_h">h</div>
+          <div id="key_308" class="key key_j">j</div>
+          <div id="key_309" class="key key_k">k</div>
+          <div id="key_310" class="key key_l">l</div>
+          <div id="key_311" class="key key_two key_semicolon">
+            <div class="key_top">:</div>
+            <div class="key_bottom">;</div>
+          </div>
+          <div id="key_312" class="key key_two key_apostrophe">
+            <div class="key_top">&quot;</div>
+            <div class="key_bottom">&#039;</div>
+          </div>
+          <div id="key_313" class="key key_enter">Enter</div>
+          <div id="key_401" class="key key_shift_lft_long">Shift</div>
+          <div id="key_403" class="key key_z">z</div>
+          <div id="key_404" class="key key_x">x</div>
+          <div id="key_405" class="key key_c">c</div>
+          <div id="key_406" class="key key_v">v</div>
+          <div id="key_407" class="key key_b">b</div>
+          <div id="key_408" class="key key_n">n</div>
+          <div id="key_409" class="key key_m">m</div>
+          <div id="key_410" class="key key_two key_comma">
+            <div class="key_top">&lt;</div>
+            <div class="key_bottom">,</div>
+          </div>
+          <div id="key_411" class="key key_two key_period">
+            <div class="key_top">&gt;</div>
+            <div class="key_bottom">.</div>
+          </div>
+          <div id="key_412" class="key key_two key_slash">
+            <div class="key_top">?</div>
+            <div class="key_bottom">/</div>
+          </div>
+          <div id="key_413" class="key key_shift_rgt">Shift</div>
+          <div id="key_501" class="key key_ctrl_lft">Ctrl</div>
+          <div id="key_503" class="key key_alt_lft">Alt</div>
+          <div id="key_504" class="key key_space"> </div>
+          <div id="key_505" class="key key_alt_rgt">AltGr</div>
+          <div id="key_508" class="key key_ctrl_rgt">Ctrl</div>
+
         </div>
       </div>
-    </div>
+
+
+
+    </div> <!-- typing_info -->
+
+    <script>
+      // Retrieve the text and key events from the hidden inputs
+      var typeText = document.getElementById('type_text').value;
+      var typeKeys = document.getElementById('type_text').value;
+
+      // Get the textarea element
+      var textarea = document.getElementById('type');
+
+      // Function to simulate typing with key events
+      function typeWithKeyEvent(text, keys, index) {
+        if (index < text.length) {
+          var char = text.charAt(index);
+          var keyCode = keys.charCodeAt(index); // Get ASCII code from type_keys
+          var event = new KeyboardEvent('keydown', { 'keyCode': keyCode });
+
+          setTimeout(function () {
+            textarea.dispatchEvent(event); // Dispatch keydown event
+            var keyPressEvent = new KeyboardEvent('keypress', { 'keyCode': keyCode });
+            textarea.dispatchEvent(keyPressEvent); // Dispatch keypress event
+            textarea.dispatchEvent(new KeyboardEvent('keyup', { 'keyCode': keyCode })); // Dispatch keyup event
+
+            index++;
+            typeWithKeyEvent(text, keys, index); // Call recursively with next character
+          }, 50); // Adjust the delay between characters (in milliseconds)
+        }
+      }
+
+      // Start typing simulation with key events
+      typeWithKeyEvent(typeText, typeKeys, 0);
+    </script>
+
+    <!--==============================================================================================-->
   </div>
-  
+
   <!-- Hidden video popup -->
   <div id="videoPopup" class="popup">
     <div class="popup-content">
@@ -118,7 +367,7 @@
       </video>
     </div>
   </div>
-  
+
   <script>
     const backgrounds = [
       'url("img/bg/bg01.jpg")',
@@ -170,4 +419,5 @@
   </script>
   <script src="lesson.2.js"></script>
 </body>
+
 </html>
