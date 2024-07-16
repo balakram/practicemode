@@ -128,16 +128,66 @@ body {
     max-width: 600px;
     margin: 0 auto;
     padding: 10px;
-    background-color: #f1f1f1;
-    border: 1px solid #ccc;
+    background-color: #8888881c;
+    border: 1px solid #f11a1a;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     transition: all 0.3s ease-in-out;
 }
 
 .welcome-note:hover {
-    background-color: #00000000;
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0);
+    background-color: #5dffe48c;
+    box-shadow: 0 6px 12px rgba(255, 19, 153, 0);
+}
+.welcome-note1 {
+    padding-top: 30px;
+    font-size: 20px;
+    font-weight: bold;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    text-align: center;
+    color: #000000;
+    font-style: normal;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    max-width:800px;
+    margin: 0 auto;
+    padding: 10px;
+    background-color: #a8a8a834;
+    border: 1px solid #43f995;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease-in-out;
+}
+
+.welcome-note1:hover {
+    background-color: #ffffffd2;
+    box-shadow: 0 6px 12px rgba(255, 255, 255, 0.412);
+}
+
+.welcome-note2 {
+    padding-top: 30px;
+    font-size: 20px;
+    font-weight: bold;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    text-align: center;
+    color: #000000;
+    font-style: normal;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    max-width:0px;
+    max-height: 0px;
+    margin: 0 auto;
+    padding: 10px;
+    background-color: #a8a8a834;
+    border: 1px solid #43f995;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease-in-out;
+}
+
+.welcome-note2:hover {
+    background-color: #ffffffd2;
+    box-shadow: 0 6px 12px rgba(255, 255, 255, 0.412);
 }
 
 /* Additional CSS for Text Styling */
@@ -610,7 +660,7 @@ input.btn {
     border-radius: 3px;
 */
 }
-
+/*
 .top_stuff {
     display: block;
     width: 728px;
@@ -629,7 +679,7 @@ input.btn {
     display: block;
     width: 160px;
     height: 600px;
-}
+}*/
 
 .blanc {
     background-color: #999;
@@ -645,6 +695,12 @@ input.btn {
 }
 #suggestion_num {
     height: 202px;
+}
+.suggestion1 {
+    width: 726px;
+    margin: 10px 0;
+    padding-left: 15%;
+    position: relative;
 }
 .hand {
     float: left;
@@ -1284,5 +1340,5 @@ footer p {
       font-family: Arial, sans-serif;
     }
   }
-s  
+  /*=========================================================*/
   
