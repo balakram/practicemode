@@ -397,7 +397,40 @@ ul#menu_subitems li:hover {
 /* Shadow styles */
 
 /* Shadow styles */
-
+/*.shadow_counter {
+    display: flex;
+    justify-content: space-around;
+    margin: 20px;
+}
+.counter_box {
+    text-align: center;
+    padding: 10px;
+    border: 1px solid #000;
+    width: 100px;
+}
+.counter_top {
+    font-size: 20px;
+    font-weight: bold;
+}
+.counter_bottom {
+    font-size: 14px;
+}
+.hidden {
+    display: none;
+}
+.result_table {
+    width: 50%;
+    margin: 20px auto;
+    border-collapse: collapse;
+}
+.result_table, .result_table th, .result_table td {
+    border: 1px solid black;
+}
+.result_table th, .result_table td {
+    padding: 10px;
+    text-align: center;
+}*/
+/* Shadow styles */
 .shadow_menu {
     padding-top: 0px; /* Reduced padding */
     background-color: #ffffff; /* White background */
@@ -450,6 +483,10 @@ ul#menu_subitems li:hover {
 .shadow_counter {
     padding: 10px 20px; /* Add padding for counter */
     background-color: #ffefc5; /* Light yellow background for counter */
+}
+
+.hidden {
+    display: none;
 }
 
 
@@ -1341,4 +1378,133 @@ footer p {
     }
   }
   /*=========================================================*/
-  
+  /* Basic styles for the container and counter */
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2px;
+}
+
+.shadow_counter {
+    padding: 10px 20px; /* Add padding for counter */
+    background-color: #ffefc5; /* Light yellow background for counter */
+    border-radius: 6px; /* Rounded corners */
+    border: 1px solid #cccccc; /* Light border */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Light shadow */
+    margin-top: 20px; /* Space between switch and counter */
+}
+
+/* Hide element by default */
+.hidden {
+    display: none;
+}
+
+/* Toggle switch styles */
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 42px;
+    height: 17px;
+    border-radius: 10px;
+    border: 2px solid #08d6b7;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: .10s;
+    border-radius: 34px; /* Rounded corners */
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 13px;
+    width: 13px;
+    border-radius: 50%;
+    left: 2px;
+    bottom: 2px;
+    background-color: white;
+    transition: .4s;
+}
+
+input:checked + .slider {
+    background-color: #007bff; /* Blue background for checked state */
+}
+
+input:checked + .slider:before {
+    transform: translateX(26px); /* Move slider to the right */
+}
+
+/*=============================Result===========================================*/
+        /* Styling for the result table */
+        #result_table {
+            display: none; /* Hidden by default */
+            margin-top: 20px;
+            width: 100%;
+            max-width: 800px;
+            border-collapse: collapse;
+            font-family: Arial, sans-serif;
+        }
+
+        /* Table Header Styling */
+        #result_table h2 {
+            color: rgb(255, 102, 0);
+            text-align: center;
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        /* Table Styling */
+        #result_table table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        /* Table Header Cells */
+        #result_table th {
+            background-color: rgba(0, 0, 0, 0.264);
+            color: #fff;
+            padding: 12px;
+            text-align: left;
+            font-size: 21px;
+            border: 2px solid #2d4e01f0;
+        }
+
+        /* Table Data Cells */
+        #result_table td {
+            background-color: #e5e5e59c;
+            padding: 12px;
+            text-align: left;
+            font-size: 21px;
+            font-weight: bold;
+            border: 2px solid #2d4e01f0;
+        }
+
+        /* Hover effect for table rows */
+        #result_table tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+
+        #result_table tr:hover {
+            background-color: #59febfaf;
+        }
+
+        /* Table container styling */
+        #result_table {
+            border: 2px solid #dddddd;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
