@@ -174,7 +174,12 @@
   <h1>Extra word exercise</h1>
   
   <div id="typing">
-
+    <div class="container">
+      <label class="switch">
+        <input type="checkbox" id="toggle-counter" checked>
+        <span class="slider"></span>
+      </label>
+    </div>
     <div id="counter" class="shadow_counter">
     <div class="counter_box">
       <div id="counter_sign" class="counter_top">0</div>
@@ -332,6 +337,37 @@
   <div id="debug">
     &nbsp;
   </div>
+      <!-- Hidden result table -->
+      <div id="result_table" style="display:none; margin-top:20px;">
+        <h2 style="color: rgb(255, 102, 0);">Your Detailed Typing Result</h2>
+        <table>
+          <tr>
+            <th>Signs</th>
+            <td id="result_sign"></td>
+          </tr>
+          <!--<tr>
+            <th>Progress</th>
+            <td id="result_prog"></td>
+          </tr>-->
+          <tr>
+            <th>WPM</th>
+            <td id="result_wpmi"></td>
+          </tr>
+          <tr>
+            <th>Errors</th>
+            <td id="result_erro"></td>
+          </tr>
+          <tr>
+            <th>Accuracy (%)</th>
+            <td id="result_accu"></td>
+          </tr>
+          <tr>
+            <th>Time</th>
+            <td id="result_time"></td>
+          </tr>
+        </table>
+        <br>
+      </div>
 
 </div> <!-- middle -->
 
