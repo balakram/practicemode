@@ -90,7 +90,7 @@
       Lesson 13
       <ul id="menu_subitems">
         <li class="submenu_new">
-          <a href="1.html">New keys: z, ?, :, &lt;, &gt; and /</a>
+          <a href="/lesson/13.html">New keys: z, ?, :, &lt;, &gt; and /</a>
         </li>
         <li class="submenu_new">
           <a href="2.html">New key exercise 1</a>
@@ -175,7 +175,12 @@
   <h1>Text exercise 2</h1>
   
   <div id="typing">
-
+    <div class="container">
+      <label class="switch">
+        <input type="checkbox" id="toggle-counter" checked>
+        <span class="slider"></span>
+      </label>
+    </div>
     <div id="counter" class="shadow_counter">
     <div class="counter_box">
       <div id="counter_sign" class="counter_top">0</div>
@@ -244,21 +249,37 @@
 
   </div> <!-- typing_info -->
 
-  <div class="middle_stuff">
-    <!-- TypingStudy bottom -->
-    <ins class="adsbygoogle"
-         style="display:inline-block;width:728px;height:90px"
-         data-ad-client="ca-pub-2467254070946095"
-         data-ad-slot="6470224697"></ins>
-    <script>
-    (adsbygoogle = window.adsbygoogle || []).push({});
-    </script>
-  </div>
-  
-  <div id="debug">
-    &nbsp;
-  </div>
-
+      <!-- Hidden result table -->
+      <div id="result_table" style="display:none; margin-top:20px;">
+        <h2 style="color: rgb(255, 102, 0);">Your Detailed Typing Result</h2>
+        <table>
+          <tr>
+            <th>Signs</th>
+            <td id="result_sign"></td>
+          </tr>
+          <!--<tr>
+            <th>Progress</th>
+            <td id="result_prog"></td>
+          </tr>-->
+          <tr>
+            <th>WPM</th>
+            <td id="result_wpmi"></td>
+          </tr>
+          <tr>
+            <th>Errors</th>
+            <td id="result_erro"></td>
+          </tr>
+          <tr>
+            <th>Accuracy (%)</th>
+            <td id="result_accu"></td>
+          </tr>
+          <tr>
+            <th>Time</th>
+            <td id="result_time"></td>
+          </tr>
+        </table>
+        <br>
+      </div>
 </div> <!-- middle -->
 
 <div id="right">
