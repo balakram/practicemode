@@ -847,3 +847,324 @@ document.addEventListener('DOMContentLoaded', function() {
     }
   });
   
+
+  /*============================hide the shadoe_counter  real time ===================================== */
+  document.addEventListener('DOMContentLoaded', function() {
+    const toggleCounterCheckbox = document.getElementById('toggle-counter');
+    const shadowCounter = document.querySelector('.shadow_counter');
+
+    // Initial state: visible by default, hidden if checkbox is unchecked
+    shadowCounter.classList.toggle('hidden', !toggleCounterCheckbox.unchecked);
+
+    toggleCounterCheckbox.addEventListener('change', function() {
+        if (toggleCounterCheckbox.checked) {
+            shadowCounter.classList.remove('hidden');
+        } else {
+            shadowCounter.classList.add('hidden');
+        }
+    });
+});
+
+/*=============result=================*/
+/*var IntervalT, IntervalM;
+var Time = 0, FirstTime = true, ErrorQty = 0;
+var TotalPos = 0, TotalLength = 0;
+var TextDone = "", TextCurrent = "", TextDoneArr = [];
+var LastError = false;
+var Progress = {}, ProgressBad = {};
+var Index = 0, Pos = 0;
+var SpeedTest = false;
+
+function ById(id) {
+    return document.getElementById(id);
+}
+
+function escapeHtml(text) {
+    var map = {
+        '&': '&amp;',
+        '<': '&lt;',
+        '>': '&gt;',
+        '"': '&quot;',
+        "'": '&#039;'
+    };
+    return text.replace(/[&<>"']/g, function(m) { return map[m]; });
+}
+
+
+function AddProgress(key, bad) {
+    if (!FirstTime) {
+        FirstTime = !bad;
+        return;
+    }
+
+    var qty = Progress[key];
+    if (qty == undefined) qty = 0;
+
+    Progress[key] = ++qty;
+
+    if (bad) {
+        qty = ProgressBad[key];
+        if (qty == undefined) qty = 0;
+        ProgressBad[key] = ++qty;
+    }
+
+    FirstTime = !bad;
+}
+
+function ShowTime() {
+    var counter_time = ById("counter_time");
+    if (counter_time == null) return;
+
+    var diff = 0;
+    var diff_min = 0;
+    var diff_sec = 0;
+    if (Time > 0) {
+        diff = new Date().getTime() - Time.getTime();
+        diff_min = Math.floor(diff / 1000 / 60);
+        diff_sec = Math.ceil((diff - diff_min * 1000 * 60) / 1000);
+    }
+    if (diff_min < 10) {
+        diff_min = "0" + diff_min;
+    }
+    if (diff_sec < 10) {
+        diff_sec = "0" + diff_sec;
+    }
+
+    if (SpeedTest && diff > 1000 * 60) {
+        clearInterval(IntervalT);
+        clearInterval(IntervalM);
+
+        ShowConclusion();
+    }
+
+    counter_time.innerHTML = diff_min + ":" + diff_sec;
+}
+
+function ShowCounter() {
+    var counter_erro = ById("counter_erro");
+    if (counter_erro == null) return;
+    var counter_wpmi = ById("counter_wpmi");
+    if (counter_wpmi == null) return;
+    if (!SpeedTest) {
+        var counter_sign = ById("counter_sign");
+        if (counter_sign == null) return;
+        var counter_prog = ById("counter_prog");
+        if (counter_prog == null) return;
+        var counter_accu = ById("counter_accu");
+        if (counter_accu == null) return;
+    }
+
+    clearInterval(IntervalM);
+
+    var percent = 0;
+    if (TotalLength > 0) {
+        percent = parseInt((TotalPos / TotalLength) * 100);
+    }
+
+    var bad = 0;
+    bad = ErrorQty;
+
+    if (Time > 0) {
+        var diff = new Date().getTime() - Time.getTime();
+        if (diff > 50) {
+            var wpm = Math.ceil((TotalPos * 12) / (diff / 1000));
+        } else {
+            var wpm = 0;
+        }
+        var diff_min = Math.floor(diff / 1000 / 60);
+        var diff_sec = Math.ceil((diff - diff_min * 1000 * 60) / 1000);
+    } else {
+        var diff = 0;
+        var wpm = 0;
+        var diff_min = 0;
+        var diff_sec = 0;
+    }
+
+    var accuracy = 100;
+    if (TotalPos > 0) {
+        accuracy = Math.round(100 - (bad / TotalPos) * 100);
+    }
+
+    counter_erro.innerHTML = bad;
+    counter_wpmi.innerHTML = wpm;
+    if (!SpeedTest) {
+        counter_sign.innerHTML = TotalPos;
+        counter_prog.innerHTML = percent + "%";
+        counter_accu.innerHTML = accuracy + "%";
+    }
+
+    IntervalM = setInterval(ShowCounter, 3000);
+}
+
+function ShowConclusion() {
+    clearInterval(IntervalT);
+    clearInterval(IntervalM);
+
+    var url = new URL(window.location.href);
+    url.pathname = 'result.html';
+    url.searchParams.set('signs', ById('counter_sign').innerHTML);
+    url.searchParams.set('progress', ById('counter_prog').innerHTML);
+    url.searchParams.set('wpm', ById('counter_wpmi').innerHTML);
+    url.searchParams.set('errors', ById('counter_erro').innerHTML);
+    url.searchParams.set('accuracy', ById('counter_accu').innerHTML);
+    url.searchParams.set('time', ById('counter_time').innerHTML);
+
+    window.location.href = url.toString();
+}
+
+// Initialize timer and counters
+IntervalT = setInterval(ShowTime, 1000);
+IntervalM = setInterval(ShowCounter, 3000);
+*/
+var IntervalT, IntervalM;
+var Time = 0, FirstTime = true, ErrorQty = 0;
+var TotalPos = 0, TotalLength = 0;
+var TextDone = "", TextCurrent = "", TextDoneArr = [];
+var LastError = false;
+var Progress = {}, ProgressBad = {};
+var Index = 0, Pos = 0;
+var SpeedTest = false;
+
+function ById(id) {
+    return document.getElementById(id);
+}
+
+function escapeHtml(text) {
+    var map = {
+        '&': '&amp;',
+        '<': '&lt;',
+        '>': '&gt;',
+        '"': '&quot;',
+        "'": '&#039;'
+    };
+    return text.replace(/[&<>"']/g, function(m) { return map[m]; });
+}
+
+
+function AddProgress(key, bad) {
+    if (!FirstTime) {
+        FirstTime = !bad;
+        return;
+    }
+
+    var qty = Progress[key];
+    if (qty == undefined) qty = 0;
+
+    Progress[key] = ++qty;
+
+    if (bad) {
+        qty = ProgressBad[key];
+        if (qty == undefined) qty = 0;
+        ProgressBad[key] = ++qty;
+    }
+
+    FirstTime = !bad;
+}
+
+function ShowTime() {
+    var counter_time = ById("counter_time");
+    if (counter_time == null) return;
+
+    var diff = 0;
+    var diff_min = 0;
+    var diff_sec = 0;
+    if (Time > 0) {
+        diff = new Date().getTime() - Time.getTime();
+        diff_min = Math.floor(diff / 1000 / 60);
+        diff_sec = Math.ceil((diff - diff_min * 1000 * 60) / 1000);
+    }
+    if (diff_min < 10) {
+        diff_min = "0" + diff_min;
+    }
+    if (diff_sec < 10) {
+        diff_sec = "0" + diff_sec;
+    }
+
+    if (SpeedTest && diff > 1000 * 60) {
+        clearInterval(IntervalT);
+        clearInterval(IntervalM);
+
+        ShowConclusion();
+    }
+
+    counter_time.innerHTML = diff_min + ":" + diff_sec;
+}
+
+function ShowCounter() {
+    var counter_erro = ById("counter_erro");
+    if (counter_erro == null) return;
+    var counter_wpmi = ById("counter_wpmi");
+    if (counter_wpmi == null) return;
+    if (!SpeedTest) {
+        var counter_sign = ById("counter_sign");
+        if (counter_sign == null) return;
+        var counter_prog = ById("counter_prog");
+        if (counter_prog == null) return;
+        var counter_accu = ById("counter_accu");
+        if (counter_accu == null) return;
+    }
+
+    clearInterval(IntervalM);
+
+    var percent = 0;
+    if (TotalLength > 0) {
+        percent = parseInt((TotalPos / TotalLength) * 100);
+    }
+
+    var bad = 0;
+    bad = ErrorQty;
+
+    if (Time > 0) {
+        var diff = new Date().getTime() - Time.getTime();
+        if (diff > 50) {
+            var wpm = Math.ceil((TotalPos * 12) / (diff / 1000));
+        } else {
+            var wpm = 0;
+        }
+        var diff_min = Math.floor(diff / 1000 / 60);
+        var diff_sec = Math.ceil((diff - diff_min * 1000 * 60) / 1000);
+    } else {
+        var diff = 0;
+        var wpm = 0;
+        var diff_min = 0;
+        var diff_sec = 0;
+    }
+
+    var accuracy = 100;
+    if (TotalPos > 0) {
+        accuracy = Math.round(100 - (bad / TotalPos) * 100);
+    }
+
+    counter_erro.innerHTML = bad;
+    counter_wpmi.innerHTML = wpm;
+    if (!SpeedTest) {
+        counter_sign.innerHTML = TotalPos;
+        counter_prog.innerHTML = percent + "%";
+        counter_accu.innerHTML = accuracy + "%";
+    }
+
+    IntervalM = setInterval(ShowCounter, 3000);
+}
+
+function ShowConclusion() {
+    clearInterval(IntervalT);
+    clearInterval(IntervalM);
+
+    ById('result_sign').innerHTML = ById('counter_sign').innerHTML;
+    //ById('result_prog').innerHTML = ById('counter_prog').innerHTML;
+    ById('result_wpmi').innerHTML = ById('counter_wpmi').innerHTML;
+    ById('result_erro').innerHTML = ById('counter_erro').innerHTML;
+    ById('result_accu').innerHTML = ById('counter_accu').innerHTML;
+    ById('result_time').innerHTML = ById('counter_time').innerHTML;
+
+    // Hide typing info
+    ById('typing_info').style.display = 'none';
+    ById('typing').style.display = 'none';
+
+    // Show the result table
+    ById('result_table').style.display = 'block';
+}
+
+// Initialize timer and counters
+IntervalT = setInterval(ShowTime, 1000);
+IntervalM = setInterval(ShowCounter, 3000);
