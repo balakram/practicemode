@@ -1168,3 +1168,28 @@ function ShowConclusion() {
 // Initialize timer and counters
 IntervalT = setInterval(ShowTime, 1000);
 IntervalM = setInterval(ShowCounter, 3000);
+
+/**==========================site visitor counter================================* */
+document.addEventListener('DOMContentLoaded', function () {
+    // Retrieve the current count from localStorage
+    let visitCount = localStorage.getItem('visitCount');
+
+    // If there's no count in localStorage, initialize it to 0
+    if (!visitCount) {
+        visitCount = 0;
+    }
+
+    // Increment the visit count
+    visitCount++;
+
+    // Store the updated count in localStorage
+    localStorage.setItem('visitCount', visitCount);
+
+    // Display the visit count in the counter element
+    document.getElementById('vcounter').textContent = visitCount;
+});
+
+
+document.getElementById('theme-toggle').addEventListener('click', function() {
+    document.body.classList.toggle('dark-mode');
+});

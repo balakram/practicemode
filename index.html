@@ -7,7 +7,7 @@
   <meta http-equiv="pragma" content="no-cache" />
   <meta http-equiv="cache-control" content="no-cache" />
   <title>Typing Practice Mode</title>
-  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="btlogo-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
   <link rel="stylesheet" type="text/css" href="style.5.css" />
@@ -38,6 +38,8 @@
   <div id="wrap">
     <div id="top" class="shadow_menu">
       <div id="logo">Typing Practice Mode<span></span></div>
+      <button id="theme-toggle">Toggle Dark Mode</button>
+
     </div>
 
     <div id="left" class="shadow_menu">
@@ -60,7 +62,6 @@
         <li class="menu_new"><a href="lesson/15.html" title="New keys: All keys">Lesson 15</a></li>
         <li class="menu_other"><a href="numeric_keypad.html">Numeric keypad</a></li>
         <li class="menu_other"><a href="ssc.html">SSC CGL</a></li>
-        
 
         <div id="buttonContainer">
           <a href="https://balakram.github.io/typing/"><button id="typingTestBtn" class="popup-btn">Typing test</button></a>
@@ -68,6 +69,7 @@
           <button id="openVideoBtn" class="popup-btn">Watch Video</button>
           <button id="changeBgBtn" class="popup-btn">Change Background</button>
         </div>
+
       </ul>
     </div>
 
@@ -314,13 +316,17 @@
           <div id="key_413" class="key key_shift_rgt">Shift</div>
           <div id="key_501" class="key key_ctrl_lft">Ctrl</div>
           <div id="key_503" class="key key_alt_lft">Alt</div>
-          <div id="key_504" class="key key_space"> </div>
+          <div id="key_504" class="key key_space"> 0</div>
           <div id="key_505" class="key key_alt_rgt">AltGr</div>
           <div id="key_508" class="key key_ctrl_rgt">Ctrl</div>
 
         </div>
+        
       </div>
-
+      <div class="vcounter-vcontainer">
+        <!--<h1>Visitor Count</h1>-->
+        <p id="vcounter">0</p>
+    </div>
 
 
     </div> <!-- typing_info -->
@@ -420,6 +426,7 @@
     window.onload = setRandomBackground;
   </script>
   <script src="lesson.2.js"></script>
+
 </body>
 
 </html>

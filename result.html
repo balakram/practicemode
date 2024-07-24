@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        table {
+            width: 50%;
+            margin: 20px auto;
+            border-collapse: collapse;
+        }
+        table, th, td {
+            border: 1px solid black;
+        }
+        th, td {
+            padding: 10px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div id="result_table">
+        <table>
+            <tr>
+                <th>Signs</th>
+                <th>Progress</th>
+                <th>WPM</th>
+                <th>Errors</th>
+                <th>Accuracy</th>
+                <th>Time</th>
+            </tr>
+            <tr>
+                <td id="result_sign"></td>
+                <td id="result_prog"></td>
+                <td id="result_wpmi"></td>
+                <td id="result_erro"></td>
+                <td id="result_accu"></td>
+                <td id="result_time"></td>
+            </tr>
+        </table>
+    </div>
+
+    <script>
+        function getQueryParam(param) {
+            var urlParams = new URLSearchParams(window.location.search);
+            return urlParams.get(param);
+        }
+
+        document.getElementById('result_sign').innerHTML = getQueryParam('signs');
+        document.getElementById('result_prog').innerHTML = getQueryParam('progress');
+        document.getElementById('result_wpmi').innerHTML = getQueryParam('wpm');
+        document.getElementById('result_erro').innerHTML = getQueryParam('errors');
+        document.getElementById('result_accu').innerHTML = getQueryParam('accuracy');
+        document.getElementById('result_time').innerHTML = getQueryParam('time');
+    </script>
+</body>
+</html>
