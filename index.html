@@ -12,6 +12,8 @@
   <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
   <link rel="stylesheet" type="text/css" href="style.5.css" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
   <style>
     body {
       transition: background-image 0.5s ease;
@@ -44,7 +46,9 @@
 
     <div id="left" class="shadow_menu">
       <ul id="menu_items">
-        <li class="menu_other font-weight: bold"><a href="index.html">Home 🏠</a></li>
+        <li class="menu_other font-weight: bold"><a href="index.html">Home
+            🏠</a>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<i
+            id="openPopupBtn" class="fas fa-info-circle popup-icon" style="padding-right: 0;"></i>nfo</li>
         <li class="menu_new"><a href="lesson/1.html" title="New keys: Home row">Lesson 1</a></li>
         <li class="menu_new"><a href="lesson/2.html" title="New keys: e and i">Lesson 2</a></li>
         <li class="menu_new"><a href="lesson/3.html" title="New keys: r and u">Lesson 3</a></li>
@@ -64,13 +68,236 @@
         <li class="menu_other"><a href="ssc.html">SSC CGL</a></li>
 
         <div id="buttonContainer">
-          <a href="https://balakram.github.io/typing/"><button id="typingTestBtn" class="popup-btn">Typing test</button></a>
+          <!--<button id="openPopupBtn" class="popup-btn">Open Popup</button>-->
+          <a href="https://balakram.github.io/typing/"><button id="typingTestBtn" class="popup-btn">Typing
+              test</button></a>
           <a href="https://balakram.github.io/balakramtudu/"><button id="aboutBtn" class="popup-btn">About</button></a>
           <button id="openVideoBtn" class="popup-btn">Watch Video</button>
           <button id="changeBgBtn" class="popup-btn">Change Background</button>
         </div>
 
       </ul>
+    </div>
+
+    <!-- Hidden popup modal -->
+    <div id="popupModal" class="modal">
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <img src="btlogo-icon.png" alt="Popup Image" style="width:5%; height: auto;">
+        <h1
+          style=" text-align: center; font-weight: bolder; color: #333;  margin-top: 0;  margin-bottom: 15px; font-size: 24px; ">
+          Typing with 10 fingers quickly explained</h1>
+        <div class="grid-outline-center area clearfix">
+          <div class="grid-12 grid-xl-8">
+            <h2>Typing practice fundamentals</h2>
+            <p>The 10 finger method is a very established technique to efficiently use your computer keyboard. With some
+              practice and the correct finger positions you can type „blindly“ on the keyboard. If you have it down, you
+              can significantly lower your error rate and increase your typing speed at the same time.</p>
+            <div class="intro">
+              <div class="item" id="intro_eagle_eye">
+                <h3><span class="no">1</span> Hunt and peck</h3>
+                <div>
+                  <p>Although the advantages of the 10 finger-method are perfectly obvious, still many people are
+                    hunting and pecking away. Here you are staring at your keyboard until you spot the right key and
+                    then hit it with your index finger.</p>
+                  <p>After some years you start using more fingers and you might know the positions of the keys better –
+                    however, without a distinct finger-key-combination only a few people can manage „blindly“ and
+                    equally fast.</p><img src="info/1.png">
+                </div>
+              </div>
+              <div class="item" id="intro_basic_position">
+                <h3><span class="no">2</span> Basic position for typewriting</h3>
+                <div>
+                  <p>The basic concept of fast typing is quickly explained: Your fingers take up a fixed starting
+                    position, from where you can reach any key you need. Your left fingers are placed on the keys A, S,
+                    D and F. Your right fingers are on the keys J, K, L and semicolon. Your thumbs are on the space bar.
+                  </p><img src="info/2.png">
+                  <div class="infobox"><span class="title">Tip</span>
+                    <p>You can find the basic position without looking at your keyboard. The keys F and J, where your
+                      index fingers are placed, have a little bump. This is how you can feel where to put your index
+                      fingers, the rest of your fingers are placed accordingly then.</p>
+                  </div>
+                </div>
+              </div>
+              <div class="item" id="intro_fingers_and_keys">
+                <h3><span class="no">3</span> Fingers and keys</h3>
+                <div>
+                  <p>Each finger has to hit several different keys. On the chart you can see the coloured marks: they
+                    show you which finger and which key correlate.</p><img src="info/3.png">
+                  <p class="info">* This is just a sample illustration. You can find the correct finger positions in our
+                    typing practic mode after you have selected your keyboard layout and started an exercise.</p>
+                  <div class="infobox"><span class="title">Example</span>
+                    <p>You want to hit the E. Here’s your left middle finger in charge, which is in the basic position
+                      placed on the key D. Reach with your left middle finger to the E and return afterwards to the
+                      basic position on the D.</p>
+                  </div>
+                  
+                  <table>
+                    <tbody>
+                      <tr>
+                        <th>Finger Name</th>
+                        <th>Left Hand</th>
+                        <th>Right Hand</th>
+                      </tr>
+                      <tr>
+                        <th>Thumb</th>
+                        <td colspan="2">These fingers rest on the <b>space bar</b></td>
+                      </tr>
+                      <tr>
+                        <th>Index</th>
+                        <td>Rest on the <b>F</b> key</td>
+                        <td>Rest on the <b>J</b> key</td>
+                      </tr>
+                      <tr>
+                        <th>Middle</th>
+                        <td>Rest on the <b>D</b> key</td>
+                        <td>Rest on the <b>K</b> key</td>
+                      </tr>
+                      <tr>
+                        <th>Ring</th>
+                        <td>Rest on the <b>S</b> key</td>
+                        <td>Rest on the <b>L</b> key</td>
+                      </tr>
+                      <tr>
+                        <th>Little</th>
+                        <td>Rest on the <b>A</b> key</td>
+                        <td>Rest on the <b>;</b> key</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+              <div class="item" id="intro_objective">
+                <h3><span class="no">4</span> Objective of the 10 finger method</h3>
+                <div>
+                  <p>The objective is to anchor the handling of the keyboard in your subconscious. Our subconscious
+                    helps us dealing with more or less complex actions within seconds, almost automatically.</p>
+                  <p>Hunting and pecking on the downside consumes unnecessary energy (where’s the next key?). However,
+                    the distinct finger-key-combinations help you to focus on the most important thing: the content.</p>
+                  <div class="infobox"><span class="title">Tip</span>
+                    <p>If you have adapted your own writing system and have been using it for a long time, you will
+                      probably be slower than before after switching to the 10 finger-method. Do not be discouraged.
+                      After a short time you will notice a significant progress and write faster and more comfortably
+                      than with your old system.</p>
+                  </div>
+                </div>
+              </div>
+              <div class="item" id="intro_advantages">
+                <h3><span class="no">5</span> Advantages of learning to type</h3>
+                <div>
+                  <p>Using the 10 finger-method has several advantages which improve your daily work on your computer.
+                  </p>
+                  <h4>Speed</h4>
+                  <p>By using the 10 finger-method subconsciously you can increase your typing speed significantly, in
+                    other words you will be saving precious time.</p>
+                  <h4>Efficiency</h4>
+                  <p>Since you don’t have to focus on hitting single keys any longer, you can concentrate on the texts
+                    you’re writing. You don’t have to switch back and forth anymore, your brain gets some relief and can
+                    work more efficiently.</p>
+                  <h4>Ergonomics</h4>
+                  <p>The permanent eye on the keyboard supports an unhealthy posture at work. Using the 10 finger-method
+                    you don’t need to glimpse at your keyboard all the time. This helps you to sit upright and in a good
+                    position.</p><img src="info/5.png">
+                </div>
+              </div>
+              <div class="item" id="intro_customization">
+                <h3><span class="no">6</span> Do I have to type with all 10 fingers?</h3>
+                <div>
+                  <p>Many users ask themselves whether they really have to use all 10 fingers or whether 6 or just 4
+                    fingers are enough? The use of all fingers is of course the optimal condition and who really masters
+                    typing with 10 fingers, types faster and more relaxed.</p>
+                  <p>However, if you find it very difficult to retrain your self-taught typing technique or if you have
+                    anatomical difficulties using all fingers, you can of course use fewer fingers or type keys with
+                    other fingers than we recommend.</p>
+                  <p>The key to efficient operation of the computer keyboard is that you know the positions of the keys
+                    and the necessary movements of your fingers and that you can utilize them without lengthy thought or
+                    looking at the keyboard. The technique we recommend only offers you a method that has proven itself.
+                    However, you can of course - if you think it is necessary - adapt it to your needs.</p>
+                </div>
+              </div>
+              <div class="item" id="intro_targeting_group">
+                <h3><span class="no">7</span> Why is it worth it?</h3>
+                <div>
+                  <p>Who is our offer actually intended for? And is it worthwhile for you to invest the time and learn
+                    to type "the right way"?</p>
+                  <p>Nowadays, 2/3 of all professional activities require work on the computer. And also privately we
+                    spend more and more time in the digital world. The time we spend every day entering texts on the
+                    computer may vary according to our profession and private usage patterns and may not seem so much to
+                    us - but the long-term approach is decisive here.</p>
+                  <p>Let's assume you spend an average of 1 hour a day entering texts. Projected to one year, that is
+                    already 365 hours. If you double your typing speed, you will save about 180 hours per year. For a
+                    working week of 40 hours, this means 4 1/2 weeks of free time per year, which you can use for other
+                    tasks or which at least allows you to go to work on time much more often.</p>
+                  <p>Of course, this is only an example calculation. Depending on how fit you are on the keyboard at the
+                    moment, even a 3- to 4-fold increase in typing speed is possible - with correspondingly higher time
+                    savings.</p>
+                  <table>
+                    <tbody>
+                      <tr>
+                        <th>words per minute</th>
+                        <th>text input per day</th>
+                        <th>1 year *</th>
+                        <th>5 years *</th>
+                      </tr>
+                      <tr>
+                        <td>10</td>
+                        <td>2 hours</td>
+                        <td>18 weeks</td>
+                        <td>90 weeks</td>
+                      </tr>
+                      <tr>
+                        <td>20</td>
+                        <td>1 hours</td>
+                        <td>9 weeks</td>
+                        <td>45 weeks</td>
+                      </tr>
+                      <tr>
+                        <td>40</td>
+                        <td>30 minutes</td>
+                        <td>4,5 weeks</td>
+                        <td>22,5 weeks</td>
+                      </tr>
+                      <tr>
+                        <td>60</td>
+                        <td>20 minutes</td>
+                        <td>3 weeks</td>
+                        <td>15 weeks</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                  <p class="info">* based on a 40-hour working week</p>
+                  <p>The time needed, which probably prevented you from learning to type with 10 fingers, can therefore
+                    be completely neglected in comparison to the possible long-term time saving.</p>
+                  <p>If you can't type very quickly with your own typing technique right now, the learning effort is
+                    definitely worthwhile.</p>
+                  <div class="infobox"><span class="title">Tip</span>
+                    <p>You can check your time spent on your typing practice in the statistics of our <a class="btn green cta" href="https://balakram.github.io/typing/">typing test</a>
+                      mode at any time.</p>
+                  </div>
+                </div>
+              </div>
+              <div class="item" id="intro_go">
+                <h2>Improve your typing speed</h2>
+                <div>
+                  <div>
+                    <p>Now you know all the basics to start typing with 10 fingers. Just try out our typewriting
+                      training program right now:</p>
+                    <p><a class="btn green cta" href="lesson/1.html">Go to typing lessons</a>
+                    <div class="box adbox adsense">
+                      <p class="info" style="text-align: right;margin-bottom: 5px;color: #AAA;">𝐵𝒶𝓁𝒶𝓀𝓇𝒶𝓂
+                        𝒯𝓊𝒹𝓊</p><ins class="adsbygoogle" style="display:block; text-align:center;"
+                        data-ad-layout="in-article" data-ad-format="fluid" data-ad-client="ca-pub-5713762016499057"
+                        data-ad-slot="3888462324"></ins>
+                      <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+                    </div>
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
 
     <div id="middle">
@@ -108,7 +335,7 @@
           }
         </script>-->
 
-          <!--<div id="intro" class="slideshow-container welcome-note1">
+        <!--<div id="intro" class="slideshow-container welcome-note1">
             <div class="slideshow-content">Still typing with two fingers? Do you need to look at your keyboard before every keystroke? It's time to change that!<span class="typing-effect"></span></div>
             <div class="slideshow-content">Typing Practice Mode is a free, user-friendly website designed to help you learn, practice, and improve your typing speed and accuracy.<span class="typing-effect"></span></div>
             <div class="slideshow-content">With touch typing, you won't need to look at the keyboard. You'll type faster and more efficiently!<span class="typing-effect"></span></div>
@@ -188,7 +415,8 @@
             <textarea name="type" id="type" class="dir_ltr slideshow-container welcome-note2" autocomplete="off"
               autocorrect="off" autocapitalize="none" spellcheck="false" cols="20" rows="20"
               onkeydown="return OnKeyDown(this, event);" onkeypress="return OnKeyPress(this, event);"></textarea>
-            <input type="hidden" id="type_text"value="> Still typing with two fingers?¶Do you need to look at your keyboard before every keystroke? It's time to change that!¶Typing Practice Mode is a free, user-friendly website designed to help you learn, practice, and improve your typing speed and accuracy.¶With touch typing, you won't need to look at the keyboard.¶You will type faster and more efficiently!¶Touch typing uses muscle memory instead of sight, letting you achieve higher data entry speeds, especially when transcribing text.¶Boost your productivity with touch typing.Increase your speed and reduce eye strain and fatigue.¶Typing Practice Mode offers 15 lessons help you learn step-by-step, track your progress, and have fun!¶" />
+            <input type="hidden" id="type_text"
+              value="> Still typing with two fingers?¶Do you need to look at your keyboard before every keystroke? It's time to change that!¶Typing Practice Mode is a free, user-friendly website designed to help you learn, practice, and improve your typing speed and accuracy.¶With touch typing, you won't need to look at the keyboard.¶You will type faster and more efficiently!¶Touch typing uses muscle memory instead of sight, letting you achieve higher data entry speeds, especially when transcribing text.¶Boost your productivity with touch typing.Increase your speed and reduce eye strain and fatigue.¶Typing Practice Mode offers 15 lessons help you learn step-by-step, track your progress, and have fun!¶" />
             <input type="hidden" id="type_keys"
               value="96:101¶126:101;413¶49:102¶33:102;413¶50:103¶64:103;413¶51:104¶35:104;413¶52:105¶36:105;413¶53:106¶37:106;413¶54:107¶94:107;96:101¶126:101;413¶49:102¶33:102;413¶50:103¶64:103;413¶51:104¶35:104;413¶52:105¶36:105;413¶53:106¶37:106;413¶54:107¶94:107401¶55:108¶38:108;401¶56:109¶42:109;401¶57:110¶40:110;401¶48:113;413¶101:206;413¶121:207¶89:207;401¶117:208¶85:208;401¶105:209¶73:209;401¶111:210¶79:210;401¶112:211¶80:211;401¶91:212¶123:212;401¶93:213¶125:213;401¶92:214¶124:214;401¶97:302¶65:302;413¶115:303¶83:303;413¶100:304¶68:304;413¶102:305¶70:305;413¶103:306¶71:306;413¶104:307¶72:307;401¶106:308¶74:308;401¶107:309¶75:309;401¶108:310¶76:310;401¶59:311¶58:311;401¶39:312¶34:312;401¶122:403¶90:403;413¶120:404¶88:404;413¶99:405¶67:405;413¶118:406¶86:406;413¶98:407¶66:407;413¶110:408¶78:408;401¶109:409¶77:409;401¶44:410¶60:410;401¶46:411¶62:411;401¶47:412¶63:412;401¶32:504¶" />
             <input type="hidden" name="utf8" value="&#x2713;" />
@@ -316,17 +544,17 @@
           <div id="key_413" class="key key_shift_rgt">Shift</div>
           <div id="key_501" class="key key_ctrl_lft">Ctrl</div>
           <div id="key_503" class="key key_alt_lft">Alt</div>
-          <div id="key_504" class="key key_space"> 0</div>
+          <div id="key_504" class="key key_space"> </div>
           <div id="key_505" class="key key_alt_rgt">AltGr</div>
           <div id="key_508" class="key key_ctrl_rgt">Ctrl</div>
 
         </div>
-        
+
       </div>
       <div class="vcounter-vcontainer">
         <!--<h1>Visitor Count</h1>-->
         <p id="vcounter">0</p>
-    </div>
+      </div>
 
 
     </div> <!-- typing_info -->
@@ -426,6 +654,197 @@
     window.onload = setRandomBackground;
   </script>
   <script src="lesson.2.js"></script>
+  <style>
+    /* Modal styles */
+    /* Modal styles */
+    .modal {
+      display: none;
+      /* Hidden by default */
+      position: fixed;
+      /* Stay in place */
+      z-index: 1000;
+      /* Sit on top */
+      left: 0;
+      top: 0;
+      width: 100%;
+      /* Full width */
+      height: 100%;
+      /* Full height */
+      overflow: auto;
+      /* Enable scroll if needed */
+      background-color: rgba(0, 0, 0, 0.5);
+      /* Black with opacity for a dimmed background */
+      transition: opacity 0.3s ease;
+      /* Smooth fade in/out */
+    }
+
+    .modal-content {
+      background-color: #fff;
+      margin: 5% auto;
+      /* Center the modal vertically */
+      padding: 20px;
+      border-radius: 10px;
+      /* Rounded corners */
+      border: 1px solid #ddd;
+      width: 90%;
+      /* Responsive width */
+      max-width: 600px;
+      /* Max width for larger screens */
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      /* Subtle shadow */
+      transition: transform 0.3s ease;
+      /* Smooth scaling effect */
+    }
+
+    .close {
+      color: #888;
+      float: right;
+      font-size: 24px;
+      font-weight: bold;
+      transition: color 0.3s ease;
+      /* Smooth color transition */
+    }
+
+    .close:hover,
+    .close:focus {
+      color: #333;
+      text-decoration: none;
+      cursor: pointer;
+    }
+
+    /* Style the table */
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 20px 0;
+      font-family: Arial, sans-serif;
+    }
+
+    /* Style table headers */
+    th {
+      background-color: #f4f4f4;
+      color: #333;
+      padding: 10px;
+      text-align: left;
+      border-bottom: 2px solid #ddd;
+    }
+
+    /* Style table cells */
+    td {
+      padding: 8px;
+      text-align: left;
+      border-bottom: 1px solid #ddd;
+    }
+
+    /* Add hover effect for rows */
+    tr:hover {
+      background-color: #f1f1f1;
+    }
+
+    /* Add alternating row colors */
+    tr:nth-child(even) {
+      background-color: #f9f9f9;
+    }
+
+    /* Style the table caption (if needed) */
+    caption {
+      font-size: 1.5em;
+      margin: 10px 0;
+    }
+
+    /* Optional: Add border to the table */
+    table {
+      border: 1px solid #ddd;
+    }
+
+    /* Optional: Add border radius to table */
+    table {
+      border-radius: 8px;
+      overflow: hidden;
+    }
+
+    /* Optional: Add a box shadow to the table */
+    table {
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    /*Info Box*/
+    .infobox {
+      padding: 20px 25px;
+      border: 1px solid #ddd;
+      background: url(../../images/structure.png) #f5f5f5;
+      padding-bottom: 1px;
+      margin-bottom: 25px
+    }
+
+    .infobox.infobox-lg {
+      padding: 30px 35px;
+      padding-bottom: 10px;
+      border-radius: 5px
+    }
+
+    .infobox.infobox-sm {
+      padding: 10px 15px;
+      padding-bottom: 1px;
+      border-radius: 5px
+    }
+
+    .infobox.infobox-sm p {
+      margin-bottom: 10px
+    }
+
+    .infobox h4 {
+      margin-bottom: 8px
+    }
+
+    .infobox span.title {
+      font-family: "Work Sans", Helvetica, Verdana, Arial, sans-serif;
+      display: block;
+      font-size: 18px;
+      font-weight: 400;
+      margin-bottom: 8px
+    }
+
+    .infobox p {
+      color: #555;
+      font-size: 15px;
+      line-height: 22px
+    }
+
+    .infobox input[type=password],
+    div.infobox input[type=text] {
+      background: #fefefe;
+      border-color: #cecece
+    }
+  </style>
+
+  <script>
+    // Get the modal
+    var modal = document.getElementById("popupModal");
+
+    // Get the button that opens the modal
+    var btn = document.getElementById("openPopupBtn");
+
+    // Get the <span> element that closes the modal
+    var span = document.getElementsByClassName("close")[0];
+
+    // When the user clicks the button, open the modal
+    btn.onclick = function () {
+      modal.style.display = "block";
+    }
+
+    // When the user clicks on <span> (x), close the modal
+    span.onclick = function () {
+      modal.style.display = "none";
+    }
+
+    // When the user clicks anywhere outside of the modal, close it
+    window.onclick = function (event) {
+      if (event.target == modal) {
+        modal.style.display = "none";
+      }
+    }
+  </script>
 
 </body>
 
